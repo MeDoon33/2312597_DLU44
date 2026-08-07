@@ -10,12 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Variables - Bảng màu gợi cảm giác lịch sử (Giấy da, mực cổ, nâu đất) */
         :root {
-            --bg-color: #f4ece2;       /* Màu giấy da (Parchment) */
-            --text-main: #33241b;      /* Nâu đen tối (Dark Ink) */
-            --accent-gold: #b38b4d;    /* Vàng đồng cổ */
-            --accent-red: #8b2500;     /* Đỏ đô/chu sa */
+            --bg-color: #f4ece2;       
+            --text-main: #33241b;      
+            --accent-gold: #b38b4d;    
+            --accent-red: #8b2500;     
             --card-bg: #fffcf7;
         }
 
@@ -33,13 +32,11 @@
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             color: var(--accent-red);
         }
 
-        /* Header Section */
         header {
             text-align: center;
             padding: 5rem 2rem;
@@ -62,7 +59,6 @@
             color: #5a4233;
         }
 
-        /* Main Timeline Structure */
         main {
             max-width: 1200px;
             margin: 0 auto;
@@ -73,7 +69,6 @@
             position: relative;
         }
 
-        /* Dòng kẻ dọc chính giữa */
         .timeline::after {
             content: '';
             position: absolute;
@@ -85,18 +80,16 @@
             margin-left: -2px;
         }
 
-        /* Các hộp sự kiện */
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             background-color: inherit;
             width: 50%;
-            opacity: 0; /* Cho hiệu ứng JS */
+            opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease-out;
         }
 
-        /* Hiệu ứng Fade-in khi cuộn */
         .timeline-item.visible {
             opacity: 1;
             transform: translateY(0);
@@ -105,7 +98,6 @@
         .left { left: 0; }
         .right { left: 50%; }
 
-        /* Chấm mốc thời gian trên trục */
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -121,7 +113,6 @@
         .left::after { right: -12px; }
         .right::after { left: -12px; }
 
-        /* Nội dung thẻ sự kiện */
         .content {
             padding: 30px;
             background-color: var(--card-bg);
@@ -147,14 +138,33 @@
             margin-bottom: 15px;
         }
 
-        .content p {
-            margin-bottom: 20px;
-            text-align: justify;
+        .content h4 {
+            font-size: 1.1rem;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #5a4233;
+            border-bottom: 1px solid #e0d0b8;
+            padding-bottom: 4px;
         }
 
-        /* Hình ảnh trực quan */
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+
+        .content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .content li {
+            margin-bottom: 6px;
+        }
+
         figure {
-            margin: 0;
+            margin: 15px 0 0 0;
             width: 100%;
         }
 
@@ -163,7 +173,7 @@
             height: auto;
             border-radius: 4px;
             border: 1px solid #dcd0bc;
-            filter: sepia(30%) contrast(90%); /* Phủ hiệu ứng màu cổ */
+            filter: sepia(30%) contrast(90%);
             transition: filter 0.3s ease;
         }
 
@@ -179,7 +189,6 @@
             margin-top: 8px;
         }
 
-        /* References Section */
         .references {
             background-color: #eaddcb;
             padding: 3rem;
@@ -213,7 +222,6 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Design */
         @media screen and (max-width: 768px) {
             .timeline::after { left: 31px; }
             .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
@@ -237,10 +245,17 @@
             <article class="timeline-item left">
                 <div class="content">
                     <span class="date">Năm 1802</span>
-                    <h2>Nguyễn Ánh lập ra triều Nguyễn</h2>
-                    <p>Nguyễn Ánh đánh bại hoàn toàn nhà Tây Sơn, lên ngôi hoàng đế, lấy niên hiệu là Gia Long và chọn Phú Xuân (Huế) làm kinh đô. Sự kiện này chấm dứt gần 3 thế kỷ nội chiến và chia cắt lãnh thổ, thiết lập triều đại phong kiến cuối cùng trong lịch sử Việt Nam. Năm 1804, quốc hiệu "Việt Nam" chính thức được công nhận.</p>
+                    <h2>Sự Thành Lập Vương Triều Nguyễn</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Cuối thế kỷ 18, phong trào Tây Sơn lật đổ các tập đoàn phong kiến Trịnh - Nguyễn. Nguyễn Ánh sau nhiều năm bôn ba đã xây dựng lực lượng ở Gia Định, tiến hành chiến dịch phản công ra Bắc, đánh bại hoàn toàn nhà Tây Sơn và tiến vào Thăng Long.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Nguyễn Ánh (Vua Gia Long):</strong> Người sáng lập vương triều, có tầm nhìn chiến lược tái thống nhất giang sơn, chọn Phú Xuân (Huế) làm kinh đô, chấm dứt hơn 250 năm nội chiến chia cắt Đàng Trong - Đàng Ngoài.</li>
+                    </ul>
+
                     <figure>
-                        <!-- Sử dụng ảnh Public Domain từ Wikimedia -->
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Gia_Long.jpg/640px-Gia_Long.jpg" alt="Bức chân dung vua Gia Long (Nguyễn Ánh), người sáng lập triều đại nhà Nguyễn">
                         <figcaption>Ảnh: Wikimedia Commons - Chân dung vua Gia Long (Nguyễn Ánh).</figcaption>
                     </figure>
@@ -251,8 +266,15 @@
             <article class="timeline-item right">
                 <div class="content">
                     <span class="date">1831 - 1832</span>
-                    <h2>Cải cách hành chính của vua Minh Mạng</h2>
-                    <p>Vua Minh Mạng tiến hành cuộc cải cách hành chính quy mô lớn chưa từng có, xóa bỏ các tổng trấn quyền lực và chia cả nước thành 30 tỉnh cùng 1 phủ (Thừa Thiên). Đây là bước ngoặt quan trọng nhằm tập trung quyền lực tuyệt đối về tay triều đình trung ương, tạo ra một bộ máy quản lý nhà nước chặt chẽ từ Bắc chí Nam.</p>
+                    <h2>Cải Cách Hành Chính Vua Minh Mạng</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Nhằm xóa bỏ quyền lực lớn của các tổng trấn Bắc thành và Gia Định thành, vua Minh Mạng tiến hành cuộc đại cải cách hành chính quy mô lớn, bãi bỏ các tổng trấn và chia cả nước thành 30 tỉnh và 1 phủ Thừa Thiên.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Vua Minh Mạng:</strong> Nhà vua quyết đoán, có tư duy cải cách sắc bén, giúp triều đình Huế nắm quyền kiểm soát trực tiếp mọi mặt kinh tế, quân sự, hành chính từ trung ương đến địa phương.</li>
+                    </ul>
                 </div>
             </article>
 
@@ -260,8 +282,16 @@
             <article class="timeline-item left">
                 <div class="content">
                     <span class="date">01/09/1858</span>
-                    <h2>Pháp tấn công Đà Nẵng</h2>
-                    <p>Mượn cớ triều đình Huế cấm đạo Công giáo, liên quân Pháp và Tây Ban Nha nổ súng tấn công bán đảo Sơn Trà (Đà Nẵng), chính thức mở đầu cuộc chiến tranh xâm lược Việt Nam. Triều Nguyễn dưới sự chỉ huy của danh tướng Nguyễn Tri Phương đã lập phòng tuyến cầm chân địch suốt nhiều tháng. Sự kiện này chấm dứt giai đoạn độc lập tự chủ hoàn toàn của dân tộc.</p>
+                    <h2>Pháp Tấn Công Đà Nẵng & Kháng Chiến Ban Đầu</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Mượn cớ bảo vệ đạo Công giáo, liên quân Pháp - Tây Ban Nha nổ súng tấn công bán đảo Sơn Trà (Đà Nẵng). Âm mưu "đánh nhanh thắng nhanh" bị phá sản, Pháp buộc phải chuyển hướng vào Nam Kỳ đánh chiếm Gia Định.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Nguyễn Tri Phương:</strong> Danh tướng tài ba chỉ huy phòng tuyến Đà Nẵng và Đại đồn Chí Hòa, chủ trương chiến lược cố thủ kết hợp phản công linh hoạt.</li>
+                    </ul>
+
                     <figure>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/French_ships_at_Danang_1858.jpg" alt="Tranh khắc họa các tàu chiến của liên quân Pháp và Tây Ban Nha đang nhả đạn pháo vào cửa biển Đà Nẵng">
                         <figcaption>Ảnh: Wikimedia Commons - Tàu chiến Pháp tấn công Đà Nẵng (1858).</figcaption>
@@ -272,13 +302,71 @@
             <!-- Sự kiện 4 -->
             <article class="timeline-item right">
                 <div class="content">
+                    <span class="date">05/06/1862</span>
+                    <h2>Hòa Ước Nhâm Tuất</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Trước áp lực quân sự từ thực dân Pháp, triều đình Huế bế tắc trong chiến lược và buộc phải cắt nhượng 3 tỉnh miền Đông Nam Kỳ (Gia Định, Định Tường, Biên Hòa) cùng đảo Côn Lôn cho Pháp.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Phan Thanh Giản:</strong> Thượng thư triều đình, người chịu trách nhiệm đàm phán và ký kết Hòa ước Nhâm Tuất trong hoàn cảnh lịch sử đầy cay đắng và bất lực.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Sự kiện 5 -->
+            <article class="timeline-item left">
+                <div class="content">
+                    <span class="date">06/06/1884</span>
+                    <h2>Hiệp Ước Patenôtre (Giáp Thân)</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Sau khi kiểm soát toàn bộ Bắc Kỳ, Pháp ép triều đình nhà Nguyễn ký Hiệp ước Patenôtre, chính thức thừa nhận nền bảo hộ của Pháp trên toàn cõi Trung Kỳ và Bắc Kỳ, chấm dứt chủ quyền ngoại giao độc lập.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Vua Tự Đức và triều đình Huế:</strong> Những người đứng đầu chịu áp lực từ lực lượng phương Tây vượt trội, sự lúng túng trong đường lối kháng chiến dẫn đến sự sụp đổ chủ quyền.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Sự kiện 6 -->
+            <article class="timeline-item right">
+                <div class="content">
                     <span class="date">13/07/1885</span>
-                    <h2>Phong trào Cần Vương bùng nổ</h2>
-                    <p>Sau khi cuộc phản công tại kinh thành Huế thất bại, Thượng thư Tôn Thất Thuyết đưa vua Hàm Nghi (14 tuổi) rút lên Tân Sở (Quảng Trị). Tại đây, nhà vua đã ban Chiếu Cần Vương, kêu gọi văn thân, sĩ phu và nhân dân giúp vua cứu nước. Sự kiện này châm ngòi cho một phong trào vũ trang chống Pháp sôi nổi, tiêu biểu như khởi nghĩa Ba Đình, Bãi Sậy và Hương Khê.</p>
+                    <h2>Phong Trào Cần Vương Bùng Nổ</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Phái chủ chiến tấn công đồn Mang Cá bất thành, Tôn Thất Thuyết đưa vua Hàm Nghi rút lên Tân Sở (Quảng Trị) và ban Chiếu Cần Vương kêu gọi toàn dân cứu nước, làm bùng lên ngọn lửa kháng chiến khắp cả nước.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Tôn Thất Thuyết:</strong> Thủ lĩnh phái chủ chiến, kiến trúc sư tinh thần của phong trào Cần Vương.</li>
+                        <li><strong>Vua Hàm Nghi:</strong> Vị hoàng đế trẻ tuổi tượng trưng cho khí tiết dân tộc, trực tiếp phát hịch kêu gọi kháng chiến.</li>
+                    </ul>
+
                     <figure>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/HamNghi.jpg/640px-HamNghi.jpg" alt="Chân dung trắng đen của vua Hàm Nghi trong trang phục truyền thống, búi tóc củ hành">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/HamNghi.jpg/640px-HamNghi.jpg" alt="Chân dung vua Hàm Nghi trong trang phục truyền thống">
                         <figcaption>Ảnh: Wikimedia Commons - Vua Hàm Nghi, linh hồn của phong trào Cần Vương.</figcaption>
                     </figure>
+                </div>
+            </article>
+
+            <!-- Sự kiện 7 -->
+            <article class="timeline-item left">
+                <div class="content">
+                    <span class="date">1885 - 1896</span>
+                    <h2>Cuộc Khởi Nghĩa Hương Khê</h2>
+                    
+                    <h4>Diễn biến lịch sử</h4>
+                    <p>Cuộc khởi nghĩa tiêu biểu và lớn nhất trong phong trào Cần Vương. Nghĩa quân xây dựng đồn lũy kiên cố, áp dụng chiến thuật du kích xuất sắc và tự chủ việc chế tạo súng trường theo mẫu của Pháp.</p>
+                    
+                    <h4>Nhân vật trọng yếu</h4>
+                    <ul>
+                        <li><strong>Phan Đình Phùng:</strong> Thủ lĩnh tối cao, sĩ phu có nhân cách lớn và tài thao lược xuất chúng.</li>
+                        <li><strong>Cao Thắng:</strong> Tướng tài trực tiếp đứng đầu lực lượng quân sự, người có công chế tạo thành công súng trường kiểu Pháp.</li>
+                    </ul>
                 </div>
             </article>
 
@@ -305,18 +393,16 @@
         document.addEventListener("DOMContentLoaded", () => {
             const timelineItems = document.querySelectorAll('.timeline-item');
             
-            // Cấu hình Observer
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.15 // Kích hoạt khi 15% phần tử xuất hiện trên màn hình
+                threshold: 0.15
             };
 
             const timelineObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Ngừng theo dõi sau khi đã hiện (tùy chọn)
                         observer.unobserve(entry.target);
                     }
                 });
